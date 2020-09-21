@@ -1,0 +1,73 @@
+BEGIN;
+CREATE TABLE users
+(
+   id          INTEGER PRIMARY KEY,
+   userId      INTEGER NOT NULL,
+   UNIQUE(userId)
+);
+
+CREATE TABLE pin
+(
+   id          INTEGER PRIMARY KEY,
+   userId      INTEGER NOT NULL,
+   pinNumber   INTEGER NOT NULL,
+   UNIQUE(userId)
+);
+
+
+CREATE TABLE accounts
+(
+    id          INTEGER PRIMARY KEY,
+    userId      INTEGER NOT NULL,
+    accountId   INTEGER NOT NULL,
+    UNIQUE(accountId)
+);
+
+CREATE TABLE balance
+(
+    id          INTEGER PRIMARY KEY,
+    accountId      INTEGER NOT NULL,
+    money      INTEGER NOT NULL,
+    UNIQUE(accountId)
+);
+
+INSERT OR IGNORE INTO users (userID) values (123456);
+INSERT OR IGNORE INTO users (userID) values (123789);
+INSERT OR IGNORE INTO users (userID) values (12435);
+INSERT OR IGNORE INTO users (userID) values (2354);
+INSERT OR IGNORE INTO users (userID) values (456);
+
+INSERT OR IGNORE INTO pin (userID,pinNumber) values (123456, 1234);
+INSERT OR IGNORE INTO pin (userID,pinNumber) values (123789, 4321);
+INSERT OR IGNORE INTO pin (userID,pinNumber) values (12435, 7890);
+INSERT OR IGNORE INTO pin (userID,pinNumber) values (2354, 2345);
+INSERT OR IGNORE INTO pin (userID,pinNumber) values (456, 2701);
+
+INSERT OR IGNORE INTO accounts (userID,accountId) values (123456,000001);                      
+INSERT OR IGNORE INTO accounts (userID,accountId) values (123456,000002);
+INSERT OR IGNORE INTO accounts (userID,accountId) values (123789,000003);  
+INSERT OR IGNORE INTO accounts (userID,accountId) values (12435, 000004);   
+INSERT OR IGNORE INTO accounts (userID,accountId) values (2354,  000005);    
+INSERT OR IGNORE INTO accounts (userID,accountId) values (456,   000006);
+INSERT OR IGNORE INTO accounts (userID,accountId) values (456,   000007);
+INSERT OR IGNORE INTO accounts (userID,accountId) values (456,   000008);
+INSERT OR IGNORE INTO accounts (userID,accountId) values (456,   000009);
+
+INSERT OR IGNORE INTO balance (accountId,money) values (000001, 4567);
+INSERT OR IGNORE INTO balance (accountId,money) values (000002, 45);
+INSERT OR IGNORE INTO balance (accountId,money) values (000003, 2701);
+INSERT OR IGNORE INTO balance (accountId,money) values (000004, 370);
+INSERT OR IGNORE INTO balance (accountId,money) values (000005,-1000);
+INSERT OR IGNORE INTO balance (accountId,money) values (000006, 750000);
+INSERT OR IGNORE INTO balance (accountId,money) values (000007, 10);
+INSERT OR IGNORE INTO balance (accountId,money) values (000008, 17);
+INSERT OR IGNORE INTO balance (accountId,money) values (000009, 3);
+
+COMMIT;
+
+
+
+
+
+
+
