@@ -6,6 +6,10 @@ this can be build via (mkdir build; cd build; cmake ..) and installed with sudo 
 
 The current path to the database and data.sqlite data file is hardcoded to  
 /opt/repos/SimpleATM/db/  so update this to the appropriate location when checking out the repository.
+To avoid this just run  
+mkdir -p /opt/repos/ && cd /opt/repos  
+git clone https://github.com/Neuromancer2701/SimpleATM.git  
+
 
 
 To build this project from commandline:
