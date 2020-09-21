@@ -1,17 +1,17 @@
 # SimpleATM
 
-This program uses two libraries: Sqlite3 which can be installed via Apt and
-Fmt library which is a submodule in lib.
-this can be build via (mkdir build; cd build; cmake ..) and installed with sudo make install
+This program uses two libraries: Sqlite3 which can be installed via Apt  
+and Fmt library which is a submodule in lib.
+this can be build via (mkdir build; cd build; cmake ..) and installed with sudo make install.
 
-The current path to the database and data.sqlite data file is hardcoded to 
+The current path to the database and data.sqlite data file is hardcoded to  
 /opt/repos/SimpleATM/db/  so update this to the appropriate location when checking out the repository.
 
 
 To build this project from commandline:
-mkdir build
-cd build
-cmake ..
+mkdir build  
+cd build  
+cmake ..  
 
 This should build the library and the test executable.
 running the ./tests should produce the following results:
